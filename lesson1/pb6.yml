@@ -1,0 +1,14 @@
+- name: Run ls /tmp and show the result
+  hosts: web
+  tasks:
+    - name: List /tmp directory
+      shell: ls /tmp
+      register: ls_result
+
+    - name: List /tmp
+      shell: ls /tmp
+      register: ls_result
+
+    - name: Show command output
+      debug:
+        var: ls_result.stdout

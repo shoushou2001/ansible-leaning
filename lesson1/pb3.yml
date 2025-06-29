@@ -1,0 +1,9 @@
+---
+- hosts: web
+  tasks:
+    - name: Stop vsftpd
+      service:
+        name: vsftpd
+        enabled: false
+        state: stopped
+

@@ -1,0 +1,13 @@
+---
+- hosts: web
+  vars:  
+    web_pack: php
+    ftp_pack: vsftpd    
+    
+  tasks:  
+    - name: Install {{ package_name }}   
+      package:      
+        name:        
+          - "{{ web_pack }}"        
+          - "{{ ftp_pack }}"      
+        state: present

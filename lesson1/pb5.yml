@@ -1,0 +1,23 @@
+---
+- hosts: web
+  tasks:
+    - name: create file to the path /tmp/a.abc
+      shell: touch /tmp/a.abc
+      register: shell_result
+
+    - name: copy file to other path
+      copy:
+        src: /tmp/a.abc
+        dest: /tmp/b.ab
+   
+    - name: list *.abc files under /tmp
+      shell: ls /tmp/*.abc
+      register: shell_result
+
+    - name: delete *.abc under /tmp
+      shell: rm -rf /tmp/*.abc
+      register: shell_result
+        
+    - name: show command stdout
+      debug:
+        var: shell_result.stdout

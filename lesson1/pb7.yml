@@ -1,0 +1,7 @@
+---
+- hosts: web
+  tasks:
+  - name: copy file
+    copy:
+      src: /tmp/a.abc
+      dest: /tmp/aa.abc

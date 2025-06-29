@@ -1,0 +1,8 @@
+---
+- hosts: web
+  vars_files:
+    - secrets1.yml
+  tasks:
+    - name: Show secret variable
+      debug:
+        msg: "{{ my_secret_var }}, {{ db_password }}"
